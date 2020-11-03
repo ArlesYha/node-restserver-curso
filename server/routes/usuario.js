@@ -16,25 +16,25 @@ app.get('/usuario', function (req, res) {
     let limite = req.query.limite || 5
     limite = Number(limite)
 
-    Usuario.find({estado: true})
-            // .skip(desde)
-            // .limit(limite)
-            .exec((err, usuarios) => {
-                if(err) {
-                    return res.status(400).json({
-                        ok: false,
-                        err
-                    })
-                }
+    // Usuario.find({estado: true})
+    //         // .skip(desde)
+    //         // .limit(limite)
+    //         .exec((err, usuarios) => {
+    //             if(err) {
+    //                 return res.status(400).json({
+    //                     ok: false,
+    //                     err
+    //                 })
+    //             }
 
-                Usuario.count({estado: true}, (err, cont) => {
-                    res.json({
-                        ok: true,
-                        usuarios,
-                        cuantos: cont
-                    })
-                })
-            })
+    //             Usuario.count({estado: true}, (err, cont) => {
+    //                 res.json({
+    //                     ok: true,
+    //                     usuarios,
+    //                     cuantos: cont
+    //                 })
+    //             })
+    //         })
 
     // Usuario.find({})
     //         .skip(desde)
